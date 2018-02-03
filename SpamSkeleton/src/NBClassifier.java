@@ -33,13 +33,29 @@ public class NBClassifier {
         String line = "";
         try {
             br = new BufferedReader(new FileReader(csvFileName));
+            // 1.
+            //NBClassifier(csvFileName); done in runner
+            // 2. 
             while ((line = br.readLine()) != null) {
                 // use comma as separator
                 String[] example = line.split(",");
                 String label = example[0];
                 String text = example[1]; //Array of words in text example
+                String[] parsedWords = parseText(text);
+                for (int i = 0; i < parsedWords.length; i++) {
+                    if (label.equals("spam")) {
+                        
+                    }
+                    else if (label.equals("ham")) {
+                        
+                    }
+                    else {
+                        
+                    }
+                }
                 //Do something if label is 'spam',
                 //Do something else if label is 'ham
+
             }
         } catch (IOException e) {
             e.printStackTrace();
